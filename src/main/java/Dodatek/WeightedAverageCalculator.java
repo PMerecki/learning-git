@@ -9,21 +9,10 @@ public class WeightedAverageCalculator {
             double weights[] = {4,6,8,4,4,10};
 
             double weightedAverage = calculateWeightedAverage(grades, weights);
-            System.out.println("Średnia ważona: " + weightedAverage);
+            System.out.println("Weighted average equals: " + weightedAverage);
         } catch (IllegalArgumentException e) {
-            System.err.println("Błąd: " + e.getMessage());
+            System.err.println("Error: " + e.getMessage());
         }
-    }
-
-    private static double[] parseInputToArray(String input) {
-        String[] values = input.split(",");
-        double[] result = new double[values.length];
-
-        for (int i = 0; i < values.length; i++) {
-            result[i] = Double.parseDouble(values[i]);
-        }
-
-        return result;
     }
 
     private static double calculateWeightedAverage(double[] grades, double[] weights) {
