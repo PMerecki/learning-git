@@ -5,8 +5,8 @@ public class WeightedAverageCalculator {
     public static void main(String[] args) {
 
         try {
-            double grades[] = {3,1,1,5,6,4};
-            double weights[] = {4,6,8,4,4,10};
+            double grades[] = {3,1,2,5,6,4,3};
+            double weights[] = {4,6,8,4,4,10,1};
 
             double weightedAverage = calculateWeightedAverage(grades, weights);
             System.out.println("Weighted average equals: " + weightedAverage);
@@ -31,22 +31,22 @@ public class WeightedAverageCalculator {
 
     private static void validateInput(double[] grades, double[] weights) {
         if (grades.length == 0 || weights.length == 0) {
-            throw new IllegalArgumentException("Długość kolekcji wynosi 0.");
+            throw new IllegalArgumentException("Collection length equals 0.");
         }
 
         if (grades.length != weights.length) {
-            throw new IllegalArgumentException("Długość kolekcji różni się między sobą.");
+            throw new IllegalArgumentException("Collections differ in length.");
         }
 
         for (double grade : grades) {
             if (grade < 1 || grade > 6) {
-                throw new IllegalArgumentException("Ocena wykracza poza dopuszczalny zakres (1-6).");
+                throw new IllegalArgumentException("Grade exceeds (1-6) range.");
             }
         }
 
         for (double weight : weights) {
             if (weight < 1 || weight > 10) {
-                throw new IllegalArgumentException("Waga wykracza poza dopuszczalny zakres (1-10).");
+                throw new IllegalArgumentException("Weight exceeds (1-10) range.");
             }
         }
     }
